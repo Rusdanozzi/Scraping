@@ -48,4 +48,3 @@ print(df)
 # Save to Excel
 df.to_excel("Iphone OLX.xlsx","Iphone",index=False)
 print("Dataframe is written to excel file sucessfully")
-time.sleep(30)
