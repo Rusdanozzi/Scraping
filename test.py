@@ -11,6 +11,7 @@ driver = webdriver.Chrome(service=service)
 
 driver.get("https://www.olx.co.id/jakarta-selatan_g4000030/q-iphone")
 time.sleep(5)
+
 #Judul
 #container > main > div > div > section > div > div > div:nth-child(6) > div._2CyHG > div > div:nth-child(2) > ul > li > a > div > span._2poNJ
 #container > main > div > div > section > div > div > div:nth-child(6) > div._2CyHG > div > div:nth-child(2) > ul > li > a > div > span._2Ks63
@@ -18,14 +19,17 @@ time.sleep(5)
 #Load more button
 #container > main > div > div > section > div > div > div:nth-child(6) > div._2CyHG > div > div:nth-child(2) > ul > li.TA_b7 > div > button
 
+# while True:
+#     try:
+#         WebDriverWait(driver,5).until(EC.presence_of_element_located((By.CSS_SELECTOR,"main > div > div > section > div > div > div:nth-child(6) > div._2CyHG > div > div:nth-child(2) > ul > li.TA_b7 > div > button"))).click()
+#         time.sleep(2)
+#     except Exception as e:
+#         print(e)
+#         break
 
-while True:
-    try:
-        WebDriverWait(driver,5).until(EC.presence_of_element_located((By.CSS_SELECTOR,"main > div > div > section > div > div > div:nth-child(6) > div._2CyHG > div > div:nth-child(2) > ul > li.TA_b7 > div > button"))).click()
-        time.sleep(2)
-    except Exception as e:
-        print(e)
-        break
+for loadButton in range (5):
+    WebDriverWait(driver,5).until(EC.presence_of_element_located((By.CSS_SELECTOR,"main > div > div > section > div > div > div:nth-child(6) > div._2CyHG > div > div:nth-child(2) > ul > li.TA_b7 > div > button"))).click()
+    time.sleep(2)
 
 
 iphone=[]
