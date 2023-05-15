@@ -36,13 +36,13 @@ def saveToDoc(title,date,cleanContent):
     document.add_heading(title, level=1)
     document.add_paragraph(date).bold=True
     document.add_paragraph('\n\n'+cleanContent)
-    document.save(f'{docTitle}.docx')
+    document.save("doc/" +f'{docTitle}.docx')
 
 
 
 
 if __name__ == "__main__":
-    url = "https://megapolitan.kompas.com/read/2019/08/21/21231051/dinas-perindustrian-dan-energi-dki-dibubarkan-bidang-bidangnya-dilebur-ke?page=all"
+    url = "https://www.kompas.com/hype/read/2020/07/16/105000866/lirik-dan-chord-lagu-doy-milik-kangen-band?page=all"
     soup = getSoup(url)
     title = getTitle(soup)
     date = getDate(soup)

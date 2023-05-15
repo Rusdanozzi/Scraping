@@ -11,14 +11,14 @@ def downloadImage(imgURL):
         print("writing",img_name)
 
 def getImageUrl(soup):
-    return soup.find('div',class_="photo__wrap").find("img")["src"]
+    return soup.find('figure',class_="image-overlay").find("img")["src"]
 
 def getSoup(url):
     page = requests.get(url)
     return BeautifulSoup(page.content, "html.parser")
 
 if __name__ == "__main__":
-    url = "https://nasional.kompas.com/read/2023/01/11/12091371/yusril-penerbitan-perppu-cipta-kerja-oleh-jokowi-jauh-memenuhi-alasan"
+    url = "https://www.antaranews.com/berita/3374832/airlangga-tegaskan-surya-paloh-alumni-golkar?utm_source=antaranews&utm_medium=desktop&utm_campaign=terkini"
     soup = getSoup(url)
     imgURL = getImageUrl(soup)
     downloadImage(imgURL)
